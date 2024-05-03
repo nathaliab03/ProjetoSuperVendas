@@ -8,77 +8,89 @@
 
     <h1>Controle de Funcionários</h1>
 
-    <table class="table table-hover customTable">
-        <thead>
-            <tr class="row align-items-end">
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.ClientName)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.Cpf)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.DateOfBirth)
-                </th>
-                <th class="col-md">
-                    @Html.DisplayNameFor(model => model.Salary)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.AdmissionalDate)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.EmployeeRole)
-                </th>
-                <th class="col-md">
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.ContactNumber)
-                </th>
-                <th class="col-md-2">
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th class="text-center col-md-2"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr class="row align-items-center">
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.ClientName)
-                    </td>
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.Cpf)
-                    </td>
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.DateOfBirth)
-                    </td>
-                    <td class="col-md align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.Salary)
-                    </td>
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.AdmissionalDate)
-                    </td>
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.EmployeeRole)
-                    </td>
-                    <td class="col-md align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td class="col-md-1 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.ContactNumber)
-                    </td>
-                    <td class="col-md-2 align-self-stretch">
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td class="col-md-2 text-center">
-                        <a asp-action="Edit" class="btn btn-edit mb-sm-1" asp-route-id="@item.EmployeeId">Editar</a>
-                        <a asp-action="Details" class="btn btn-details mb-sm-1" asp-route-id="@item.EmployeeId">Info</a>
-                        <a asp-action="Delete" class="btn btn-delete mb-sm-1" asp-route-id="@item.EmployeeId">Deletar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row p-3">
+        <div class="row border-bottom border-dark align-items-end" style="font-weight: bold; padding-bottom: 5px   ">
+
+        <div class="col-md-1 ">
+            <h6 style="font-weight: bold; text-align: bottom">
+                @Html.DisplayNameFor(model => model.ClientName)
+            </h6>
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.Salary)
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.AdmissionalDate)
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.EmployeeRole)
+        </div>
+
+        <div class="col-md-1">
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </div>
+
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </div>
+
+        <div class="col-md-3 text-center">
+            <a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a>
+        </div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="row border-bottom my-2 align-items-center">
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.ClientName)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.AdmissionalDate)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.EmployeeRole)
+                </div>
+
+                <div class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.ContactNumber)
+                </div>
+
+                <div class="col-md-2">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </div>
+                <div class="col-md-3 text-center">
+                    <a asp-action="Edit" class="btn btn-edit mb-sm-1" asp-route-id="@item.EmployeeId">Editar</a>
+                    <a asp-action="Details" class="btn btn-details mb-sm-1" asp-route-id="@item.EmployeeId">Info</a>
+                    <a asp-action="Delete" class="btn btn-delete mb-sm-1" asp-route-id="@item.EmployeeId">Deletar</a>
+                </div>
+            </div>
+
+        }
+    </div>
 </div>
