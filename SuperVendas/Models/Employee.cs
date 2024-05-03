@@ -34,10 +34,10 @@ namespace SuperVendas.Models
         [Display(Name = "Cargo")]
         public string? EmployeeRole { get; set; }
 
-        [Display(Name = "Status Ativo / Inativo")]
+        [Display(Name = "Status")]
         public bool Status { get; set; }
 
-        [Display(Name = "Telefone de Contato")]
+        [Display(Name = "Contato")]
         [StringLength(20, MinimumLength = 8, ErrorMessage = "Telefone Inválido")]
         public string? ContactNumber { get; set; }
 

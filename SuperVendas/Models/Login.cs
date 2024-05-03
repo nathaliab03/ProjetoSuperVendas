@@ -18,6 +18,7 @@ namespace SuperVendas.Models
         public string? Password { get; set; }
 
         public int AccessLevelId { get; set; }
+        [Display(Name = "Tipo de Acesso")]
         public AccessLevel? AccessLevel { get; set; }
     }
 }

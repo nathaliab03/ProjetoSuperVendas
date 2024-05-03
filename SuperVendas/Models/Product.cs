@@ -12,6 +12,7 @@ namespace SuperVendas.Models
         public string? ProductName { get; set; }
 
         public int CategoryId { get; set; }
+        [Display(Name = "Categoria")]
         public Category? Category { get; set; }
 
         [Display(Name = "Marca")]
