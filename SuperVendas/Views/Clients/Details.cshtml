@@ -4,75 +4,114 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container p-4 viewIndex text-center">
+    <h1>Detalhes do Cliente</h1>
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClientName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cpf)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cpf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ContactNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ContactNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AddressNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressLine)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AddressLine)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.City)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.State)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ClientId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <table class="table  table-hover">
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+
+            <td scope="col" class="text-start col-6">
+                @Html.DisplayFor(model => model.ClientName)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Cpf)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.ContactNumber)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Address)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.AddressNumber)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.AddressNumber)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.AddressLine)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.AddressLine)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.City)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.State)
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Email)
+            </td>
+        </tr>
+    </table>
+    
+
+    <div class="row">
+        <a asp-action="Edit" class="btn btn-edit mb-1 " asp-route-id="@Model?.ClientId">Editar</a>
+        <a asp-action="Index" class="btn btn-back ">Voltar à Lista</a>
+    </div>
 </div>

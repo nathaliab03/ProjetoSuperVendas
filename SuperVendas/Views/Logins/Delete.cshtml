@@ -4,36 +4,47 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<div class="container p-4 viewIndex text-center">
+    <h1>Deletar Login</h1>
+    <h3>Tem certeza que deseja deletar?</h3>
+    <table class="table col-2 table-hover">
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Login</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AccessLevel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AccessLevel.AccessLevelName)
-        </dd>
-    </dl>
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Username)
+            </td>
+
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Password)
+            </td>
+
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.AccessLevel)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.AccessLevel.AccessLevelName)
+            </td>
+
+        </tr>
+    </table>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" class="row">
         <input type="hidden" asp-for="LoginId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger mb-1" />
+        <a asp-action="Index" class="btn btn-backDelete">Voltar à Lista</a>
     </form>
 </div>

@@ -4,36 +4,40 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="container p-4 viewIndex">
+    <h1>Editar Níveis de Acesso</h1>
 
-<h4>AccessLevel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AccessLevelId" />
-            <div class="form-group">
-                <label asp-for="AccessLevelName" class="control-label"></label>
-                <input asp-for="AccessLevelName" class="form-control" />
-                <span asp-validation-for="AccessLevelName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AccessLevelType" class="control-label"></label>
-                <input asp-for="AccessLevelType" class="form-control" />
-                <span asp-validation-for="AccessLevelType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+
+    <hr />
+    <div class="row">
+        <div class="col-md">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="AccessLevelId" />
+                <div class="form-group mb-3">
+                    <label asp-for="AccessLevelName" class="control-label mb-1"></label>
+                    <input asp-for="AccessLevelName" class="form-control" />
+                    <span asp-validation-for="AccessLevelName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="AccessLevelType" class="control-label mb-1"></label>
+                    <input asp-for="AccessLevelType" class="form-control" />
+                    <span asp-validation-for="AccessLevelType" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="submit" value="Salvar" class="btn w-100 btn-superVendas" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-1">
+        <a asp-action="Index" class="btn btn-back w-100">Voltar</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

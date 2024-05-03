@@ -4,6 +4,7 @@ namespace SuperVendas.Models
 {
     public class Product
     {
+        [Key]
         public int ProductId { get; set; }
 
         [Display(Name = "Nome do Produto")]

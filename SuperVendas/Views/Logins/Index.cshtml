@@ -4,13 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="container p-4 viewIndex">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+    <h1>Controle de Login</h1>
+
+    <table class="table customTable">
+        <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
@@ -21,7 +20,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.AccessLevel)
             </th>
-            <th></th>
+                <th class="text-center"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
         </tr>
     </thead>
     <tbody>
@@ -36,12 +35,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AccessLevel.AccessLevelName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.LoginId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LoginId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LoginId">Delete</a>
+                    <td class="text-center">
+                        <a asp-action="Edit" class="btn btn-edit" asp-route-id="@item.LoginId">Edit</a>
+                        <a asp-action="Details" class="btn btn-details" asp-route-id="@item.LoginId">Details</a>
+                        <a asp-action="Delete" class="btn btn-delete"  asp-route-id="@item.LoginId">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

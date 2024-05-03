@@ -4,73 +4,84 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="container viewIndex">
+    <h1>Cadastrar Cliente</h1>
+    <hr />
 
-<h4>Client</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <div class="row">
+        <div class="col-md">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ClientName" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="ClientName" class="control-label mb-2"></label>
                 <input asp-for="ClientName" class="form-control" />
                 <span asp-validation-for="ClientName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
-                <input asp-for="Cpf" class="form-control" />
-                <span asp-validation-for="Cpf" class="text-danger"></span>
+            <div class="row">
+                <div class="form-group mb-3 col-md-6">
+                    <label asp-for="Cpf" class="control-label mb-2"></label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                    <label asp-for="DateOfBirth" class="control-label mb-2"></label>
+                    <input asp-for="DateOfBirth" class="form-control" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContactNumber" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="ContactNumber" class="control-label mb-2"></label>
                 <input asp-for="ContactNumber" class="form-control" />
                 <span asp-validation-for="ContactNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+            <div class="row">
+
+                <div class="form-group mb-3 col-md-7">
+                    <label asp-for="Address" class="control-label mb-2"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                    <div class="form-group mb-3 col-md-1">
+                    <label asp-for="AddressNumber" class="control-label mb-2"></label>
+                    <input asp-for="AddressNumber" class="form-control" />
+                    <span asp-validation-for="AddressNumber" class="text-danger"></span>
+                </div>
+                    <div class="form-group mb-3 col-md">
+                    <label asp-for="AddressLine" class="control-label mb-2"></label>
+                    <input asp-for="AddressLine" class="form-control" />
+                    <span asp-validation-for="AddressLine" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AddressNumber" class="control-label"></label>
-                <input asp-for="AddressNumber" class="form-control" />
-                <span asp-validation-for="AddressNumber" class="text-danger"></span>
+
+            <div class="row">
+
+
+                <div class="form-group col-md mb-3">
+                    <label asp-for="City" class="control-label mb-2"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                    <div class="form-group col-md mb-3">
+                    <label asp-for="State" class="control-label mb-2"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AddressLine" class="control-label"></label>
-                <input asp-for="AddressLine" class="form-control" />
-                <span asp-validation-for="AddressLine" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label mb-2"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-superVendas mt-2 w-100" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index" class="btn btn-back w-100 mt-1">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

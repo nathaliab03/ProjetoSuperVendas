@@ -1,22 +1,180 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.bg-superVendas {
+    background-color: #259198;
+}
+
+.btn-superVendas {
+    background-color: #008c95;
+    border-color: #008c95;
+    color: #cefcff;
+}
+
+    .btn-superVendas:hover {
+        background-color: #005f63;
+        border-color: #005f63;
+        color: #cefcff;
+    }
+
+.text-navSuperVendas {
+    color: #cefcff !important;
+}
+
+    .text-navSuperVendas:hover {
+        color: white !important;
+    }
+
+.dropdown-item:hover {
+    background-color: #0c646a !important;
+}
+
+#signUpContainer {
+    margin-top: 20vh;
+    max-width: 700px;
+    position: relative
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    vertical-align: middle;
+}
+
+.customTable td:first-child {
+    color: #189AB4;
+}
+
+.viewIndex {
+    margin-top: 80px;
+}
+
+
+
+.btn-edit {
+    background-color: #f4e281;
+    border-color: #c4af39;
+    color: #534f39;
+}
+
+
+    .btn-edit:hover {
+        background-color: #d6c04b;
+        border-color: #c4af39;
+        color: #534f39;
+    }
+
+    .btn-edit::before {
+        content: "\F4CA";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
+.btn-details {
+    background-color: #81edf4;
+    border-color: #3eb4bb;
+    color: #1a767c;
+}
+
+    .btn-details:hover {
+        background-color: #00b7c3;
+        border-color: #39a2c4;
+        color: #394e53;
+    }
+
+    .btn-details::before {
+        content: "\F431";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
+.btn-delete {
+    background-color: #e34949;
+    border-color: #9f4747;
+    color: #ffe3e3;
+}
+
+    .btn-delete:hover {
+        background-color: #af3e3e;
+        border-color: #833636;
+        color: #ffe3e3;
+    }
+
+    .btn-delete::before {
+        content: "\F78A";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
+.btn-back {
+    background-color: #e34949;
+    border-color: #9f4747;
+    color: #ffe3e3;
+}
+
+    .btn-back:hover {
+        background-color: #af3e3e;
+        border-color: #833636;
+        color: #ffe3e3;
+    }
+
+    .btn-back::before {
+        content: "\F131";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
+.btn-backDelete {
+    background-color: #e38349;
+    border-color: #9f6e47;
+    color: #ffefe3;
+}
+
+    .btn-backDelete:hover {
+        background-color: #d3662a;
+        border-color: #833636;
+        color: #ffe3e3;
+    }
+
+    .btn-backDelete::before {
+        content: "\F131";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
+.detailAccess {
+    text-align: center
 }

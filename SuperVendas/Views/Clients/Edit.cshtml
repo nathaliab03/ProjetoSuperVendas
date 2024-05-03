@@ -4,76 +4,87 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Client</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="container p-4 viewIndex">
+    <h1>Editar Cliente</h1>
+    <hr />
+    <div class="col-md">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ClientId" />
-            <div class="form-group">
-                <label asp-for="ClientName" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="ClientName" class="control-label mb-2"></label>
                 <input asp-for="ClientName" class="form-control" />
                 <span asp-validation-for="ClientName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
-                <input asp-for="Cpf" class="form-control" />
-                <span asp-validation-for="Cpf" class="text-danger"></span>
+
+            <div class="row">
+
+                <div class="form-group col-md mb-3">
+                    <label asp-for="Cpf" class="control-label mb-2"></label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md mb-3">
+                    <label asp-for="DateOfBirth" class="control-label mb-2"></label>
+                    <input asp-for="DateOfBirth" class="form-control" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContactNumber" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="ContactNumber" class="control-label mb-2"></label>
                 <input asp-for="ContactNumber" class="form-control" />
                 <span asp-validation-for="ContactNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+            <div class="row">
+                <div class="form-group col-md-7 mb-3">
+                    <label asp-for="Address" class="control-label mb-2"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-2 mb-3">
+                    <label asp-for="AddressNumber" class="control-label mb-2"></label>
+                    <input asp-for="AddressNumber" class="form-control" />
+                    <span asp-validation-for="AddressNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3 mb-3">
+                    <label asp-for="AddressLine" class="control-label mb-2"></label>
+                    <input asp-for="AddressLine" class="form-control" />
+                    <span asp-validation-for="AddressLine" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AddressNumber" class="control-label"></label>
-                <input asp-for="AddressNumber" class="form-control" />
-                <span asp-validation-for="AddressNumber" class="text-danger"></span>
+            <div class="row">
+
+                <div class="form-group col-md mb-3">
+                    <label asp-for="City" class="control-label mb-2"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md mb-3">
+                    <label asp-for="State" class="control-label mb-2"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AddressLine" class="control-label"></label>
-                <input asp-for="AddressLine" class="form-control" />
-                <span asp-validation-for="AddressLine" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label mb-2"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group mt-4">
+                <input type="submit" value="Salvar" class="btn w-100 btn-superVendas" />
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+
+    <div class="mt-1">
+        <a asp-action="Index" class="btn btn-back w-100">Voltar</a>
+    </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

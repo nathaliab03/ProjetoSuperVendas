@@ -4,38 +4,40 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="container p-4 viewIndex">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AccessLevelName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccessLevelType)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccessLevelName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccessLevelType)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AccessLevelId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AccessLevelId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AccessLevelId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <h1>Controle de Níveis de Acesso</h1>
+
+    <table class="table table-hover customTable">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.AccessLevelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccessLevelType)
+                </th>
+                <th class="text-center"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Create New</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessLevelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessLevelType)
+                    </td>
+                    <td class="text-center">
+
+                        <a asp-action="Edit" class="btn btn-edit" asp-route-id="@item.AccessLevelId">Editar</a>
+                        <a asp-action="Details" class="btn btn-details" asp-route-id="@item.AccessLevelId">Info</a>
+                        <a asp-action="Delete" class="btn btn-delete" asp-route-id="@item.AccessLevelId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
