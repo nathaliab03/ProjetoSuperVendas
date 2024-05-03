@@ -52,7 +52,7 @@ namespace SuperVendas.Controllers
         {
             ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "ClientName");
             ViewData["EmployeeId"] = new SelectList(_context.Employee, "EmployeeId", "ClientName");
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductBrand");
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName");
             return View();
         }
 
@@ -71,7 +71,7 @@ namespace SuperVendas.Controllers
             }
             ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "ClientName", order.ClientId);
             ViewData["EmployeeId"] = new SelectList(_context.Employee, "EmployeeId", "ClientName", order.EmployeeId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductBrand", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", order.ProductId);
             return View(order);
         }
 
@@ -90,7 +90,7 @@ namespace SuperVendas.Controllers
             }
             ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "ClientName", order.ClientId);
             ViewData["EmployeeId"] = new SelectList(_context.Employee, "EmployeeId", "ClientName", order.EmployeeId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductBrand", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", order.ProductId);
             return View(order);
         }
 
@@ -128,7 +128,7 @@ namespace SuperVendas.Controllers
             }
             ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "ClientName", order.ClientId);
             ViewData["EmployeeId"] = new SelectList(_context.Employee, "EmployeeId", "ClientName", order.EmployeeId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductBrand", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName", order.ProductId);
             return View(order);
         }
 
