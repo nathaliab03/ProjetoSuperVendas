@@ -21,5 +21,6 @@ namespace SuperVendas.Data
         public DbSet<SuperVendas.Models.Employee> Employee { get; set; } = default!;
         public DbSet<SuperVendas.Models.Product> Product { get; set; } = default!;
         public DbSet<SuperVendas.Models.Order> Order { get; set; } = default!;
+        public DbSet<SuperVendas.Models.SalesReport> SalesReport { get; set; } = default!;
     }
 }

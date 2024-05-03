@@ -10,38 +10,39 @@
 
     <table class="table customTable">
         <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccessLevel)
-            </th>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccessLevel)
+                </th>
                 <th class="text-center"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccessLevel.AccessLevelName)
-            </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessLevel.AccessLevelName)
+                    </td>
                     <td class="text-center">
-                        <a asp-action="Edit" class="btn btn-edit" asp-route-id="@item.LoginId">Edit</a>
-                        <a asp-action="Details" class="btn btn-details" asp-route-id="@item.LoginId">Details</a>
-                        <a asp-action="Delete" class="btn btn-delete"  asp-route-id="@item.LoginId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                        <a asp-action="Edit" class="btn btn-edit" asp-route-id="@item.LoginId">Editar</a>
+                        <a asp-action="Details" class="btn btn-details" asp-route-id="@item.LoginId">Info</a>
+                        <a asp-action="Delete" class="btn btn-delete" asp-route-id="@item.LoginId">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

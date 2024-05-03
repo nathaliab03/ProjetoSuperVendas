@@ -1,0 +1,70 @@
+﻿@model SuperVendas.Models.SalesReport
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container p-4 viewIndex text-center">
+    <h1>Detalhes do Relatório</h1>
+
+    <table class="table col-2 table-hover">
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.Product.ProductName)
+            </td>
+
+        </tr>
+        <tr>
+            <th scope="col" class="text-end col-6">
+                @Html.DisplayNameFor(model => model.InitialDate)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.InitialDate)
+            </td>
+
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.EndDate)
+            </td>
+
+        </tr>
+
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.SalesTotal)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.SalesTotal)
+            </td>
+
+        </tr>
+        <tr>
+            <th scope="col" class="text-end">
+                @Html.DisplayNameFor(model => model.SalesRevenue)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.SalesRevenue)
+            </td>
+
+        </tr>
+    </table>
+
+    <div class="row">
+        <a asp-action="Edit" class="btn btn-edit mb-1 " asp-route-id="@Model?.SalesReportId">Editar</a>
+        <a asp-action="Index" class="btn btn-back ">Voltar</a>
+    </div>
+    </<div>

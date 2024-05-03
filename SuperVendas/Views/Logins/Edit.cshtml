@@ -9,26 +9,26 @@
 
 
     <hr />
-<div class="row">
-    <div class="col-md">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="LoginId" />
-            <div class="form-group mb-3">
-                <label asp-for="Username" class="control-label mb-2"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Password" class="control-label mb-2"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="AccessLevelId" class="control-label mb-2"></label>
-                <select asp-for="AccessLevelId" class="form-control" asp-items="ViewBag.AccessLevelId"></select>
-                <span asp-validation-for="AccessLevelId" class="text-danger"></span>
-            </div>
+    <div class="row">
+        <div class="col-md">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="LoginId" />
+                <div class="form-group mb-3">
+                    <label asp-for="Username" class="control-label mb-2"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="control-label mb-2"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="AccessLevelId" class="control-label mb-2"></label>
+                    <select asp-for="AccessLevelId" class="form-control" asp-items="ViewBag.AccessLevelId"></select>
+                    <span asp-validation-for="AccessLevelId" class="text-danger"></span>
+                </div>
                 <div class="form-group mt-4">
                     <input type="submit" value="Salvar" class="btn w-100 btn-superVendas" />
                 </div>
@@ -42,5 +42,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

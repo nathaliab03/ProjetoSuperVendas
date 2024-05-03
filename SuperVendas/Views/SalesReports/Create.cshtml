@@ -1,0 +1,58 @@
+﻿@model SuperVendas.Models.SalesReport
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container viewIndex">
+    <h1>Cadastrar Relatório</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+
+                    <div class="form-group col-md mb-2">
+                        <label asp-for="InitialDate" class="control-label mb-2"></label>
+                        <input asp-for="InitialDate" class="form-control" />
+                        <span asp-validation-for="InitialDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md mb-2">
+                        <label asp-for="EndDate" class="control-label mb-2"></label>
+                        <input asp-for="EndDate" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="ProductId" class="control-label mb-2">Produto</label>
+                    <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="SalesTotal" class="control-label mb-2"></label>
+                    <input asp-for="SalesTotal" class="form-control" />
+                    <span asp-validation-for="SalesTotal" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="SalesRevenue" class="control-label mb-2"></label>
+                    <input asp-for="SalesRevenue" class="form-control" />
+                    <span asp-validation-for="SalesRevenue" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-superVendas mt-2 w-100" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-back w-100 mt-1">Voltar</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

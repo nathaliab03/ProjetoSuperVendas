@@ -5,8 +5,8 @@
 }
 
 <div class="container viewIndex">
-<h1>Cadastrar Nível de Acesso</h1>
-<hr />
+    <h1>Cadastrar Nível de Acesso</h1>
+    <hr />
 
     <div class="row">
         <div class="col-md">
@@ -30,10 +30,12 @@
     </div>
 
     <div>
-        <a asp-action="Index" class="btn btn-back w-100 mt-1">Back to List</a>
+        <a asp-action="Index" class="btn btn-back w-100 mt-1">Voltar</a>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

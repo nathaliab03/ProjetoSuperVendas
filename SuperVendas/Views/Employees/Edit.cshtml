@@ -48,7 +48,7 @@
                 <input asp-for="EmployeeRole" class="form-control" />
                 <span asp-validation-for="EmployeeRole" class="text-danger"></span>
             </div>
-            
+
             <div class="form-group mb-3">
                 <label asp-for="ContactNumber" class="control-label mb-2"></label>
                 <input asp-for="ContactNumber" class="form-control" />
@@ -57,34 +57,34 @@
 
             <div class="row">
 
-            <div class="form-group col-md mb-3">
-                <label asp-for="Address" class="control-label mb-2"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
                 <div class="form-group col-md mb-3">
-                <label asp-for="AddressNumber" class="control-label mb-2"></label>
-                <input asp-for="AddressNumber" class="form-control" />
-                <span asp-validation-for="AddressNumber" class="text-danger"></span>
-            </div>
+                    <label asp-for="Address" class="control-label mb-2"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
                 <div class="form-group col-md mb-3">
-                <label asp-for="AddressLine" class="control-label mb-2"></label>
-                <input asp-for="AddressLine" class="form-control" />
-                <span asp-validation-for="AddressLine" class="text-danger"></span>
-            </div>
+                    <label asp-for="AddressNumber" class="control-label mb-2"></label>
+                    <input asp-for="AddressNumber" class="form-control" />
+                    <span asp-validation-for="AddressNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md mb-3">
+                    <label asp-for="AddressLine" class="control-label mb-2"></label>
+                    <input asp-for="AddressLine" class="form-control" />
+                    <span asp-validation-for="AddressLine" class="text-danger"></span>
+                </div>
             </div>
             <div class="row">
 
-            <div class="form-group col-md mb-3">
-                <label asp-for="City" class="control-label col-md mb-2"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md mb-3">
-                <label asp-for="State" class="control-label col-md mb-2"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
+                <div class="form-group col-md mb-3">
+                    <label asp-for="City" class="control-label col-md mb-2"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md mb-3">
+                    <label asp-for="State" class="control-label col-md mb-2"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="Email" class="control-label mb-2"></label>
@@ -109,5 +109,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -10,22 +10,22 @@
 
     <div class="row">
         <div class="col-md">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group mb-3">
-                <label asp-for="Username" class="control-label mb-2"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Password" class="control-label mb-2"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="AccessLevelId" class="control-label mb-2"></label>
-                <select asp-for="AccessLevelId" class ="form-control" asp-items="ViewBag.AccessLevelId"></select>
-            </div>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="Username" class="control-label mb-2"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="control-label mb-2"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="AccessLevelId" class="control-label mb-2"></label>
+                    <select asp-for="AccessLevelId" class="form-control" asp-items="ViewBag.AccessLevelId"></select>
+                </div>
                 <div class="form-group">
                     <input type="submit" value="Cadastrar" class="btn btn-superVendas mt-2 w-100" />
                 </div>
@@ -34,10 +34,12 @@
     </div>
 
     <div>
-        <a asp-action="Index" class="btn btn-back w-100 mt-1">Back to List</a>
+        <a asp-action="Index" class="btn btn-back w-100 mt-1">Voltar</a>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

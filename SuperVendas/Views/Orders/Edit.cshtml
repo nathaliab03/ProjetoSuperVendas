@@ -9,34 +9,34 @@
     <hr />
     <div class="row">
         <div class="col-md">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="OrderId" />
-            <div class="form-group mb-3">
-                <label asp-for="ClientId" class="control-label mb-2">Cliente</label>
-                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
-                <span asp-validation-for="ClientId" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="EmployeeId" class="control-label mb-2">Funcionário</label>
-                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="ProductId" class="control-label mb-2">Produto</label>
-                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
-                <span asp-validation-for="ProductId" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Quantity" class="control-label mb-2"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Price" class="control-label mb-2"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="OrderId" />
+                <div class="form-group mb-3">
+                    <label asp-for="ClientId" class="control-label mb-2">Cliente</label>
+                    <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+                    <span asp-validation-for="ClientId" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="EmployeeId" class="control-label mb-2">Funcionário</label>
+                    <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ProductId" class="control-label mb-2">Produto</label>
+                    <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Quantity" class="control-label mb-2"></label>
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Price" class="control-label mb-2"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
                 <label asp-for="PaymentMethod" class="control-label mb-2"></label>
                 <select class="form-select mb-3" asp-for="PaymentMethod" aria-label="Default select example">
                     <option value="Crédito">Crédito</option>
@@ -57,5 +57,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
