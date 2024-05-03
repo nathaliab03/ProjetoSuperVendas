@@ -57,4 +57,13 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} 
+
+    <script src ="@Url.Content("~/js/jquery.validate.pt-BR.js")"> 
+
+ 
+
+    </script> 
+
 }

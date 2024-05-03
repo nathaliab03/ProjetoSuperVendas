@@ -34,11 +34,13 @@
                     <input asp-for="Price" class="form-control" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
-                <div class="form-group mb-3">
-                    <label asp-for="PaymentMethod" class="control-label mb-2"></label>
-                    <input asp-for="PaymentMethod" class="form-control" />
-                    <span asp-validation-for="PaymentMethod" class="text-danger"></span>
-                </div>
+                <label asp-for="PaymentMethod" class="control-label mb-2"></label>
+                <select class="form-select mb-3" asp-for="PaymentMethod" aria-label="Default select example">
+                    <option value="Crédito">Crédito</option>
+                    <option value="Débito">Débito</option>
+                    <option value="PIX">PIX</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
                 <div class="form-group">
                     <input type="submit" value="Cadastrar" class="btn btn-superVendas mt-2 w-100" />
                 </div>

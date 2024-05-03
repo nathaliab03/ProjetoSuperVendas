@@ -33,52 +33,40 @@
                     @Html.DisplayNameFor(model => model.AddressLine)
                 </th>
                 <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.City)
-                </th>
-                <th class="col-md-1">
-                    @Html.DisplayNameFor(model => model.State)
-                </th>
-                <th class="col-md-1">
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
-                <th class="text-center col-md-2"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
+                <th class="text-center col-md-4"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr class="row align-items-center">
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.ClientName)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.Cpf)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.DateOfBirth)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.ContactNumber)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.Address)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.AddressNumber)
                     </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.AddressLine)
                     </td>
-                    <td class="col-md-1">
-                        @Html.DisplayFor(modelItem => item.City)
-                    </td>
-                    <td class="col-md-1">
-                        @Html.DisplayFor(modelItem => item.State)
-                    </td>
-                    <td class="col-md-1">
+                    <td class="col-md-1 align-self-stretch">
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
-                    <td class="col-md-2 text-center">
+                    <td class="col-md-4 text-center">
                         <a asp-action="Edit" class="btn btn-edit mb-sm-1" asp-route-id="@item.ClientId">Editar</a>
                         <a asp-action="Details" class="btn btn-details mb-sm-1" asp-route-id="@item.ClientId">Info</a>
                         <a asp-action="Delete" class="btn btn-delete mb-sm-1" asp-route-id="@item.ClientId">Deletar</a>
