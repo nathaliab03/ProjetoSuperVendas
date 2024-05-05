@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,39 @@ namespace SuperVendas.Controllers
         {
             var dBContext = _context.Product.Include(p => p.Category);
             return View(await dBContext.ToListAsync());
+        }
+
+        public ActionResult Search(string searchString, string priceRange)
+        {
+
+            var items = from i in _context.Product select i;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.ProductName.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(priceRange))
+            {
+                var priceParts = priceRange.Split('-');
+                if (priceParts.Length == 2 && decimal.TryParse(priceParts[0], out decimal minPrice) && decimal.TryParse(priceParts[1], out decimal maxPrice))
+                {
+                    items = items.Where(i => i.Price >= minPrice && i.Price <= maxPrice);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(priceRange))
+            {
+                var priceParts = priceRange.Split('-');
+                if (priceParts.Length == 2 && decimal.TryParse(priceParts[0], out decimal minPrice) && decimal.TryParse(priceParts[1], out decimal maxPrice))
+                {
+                    items = items.Where(i => i.Price >= minPrice && i.Price <= maxPrice);
+                }
+            }
+
+            items = items.Include(i => i.Category);
+
+            return View("Index", items.ToList());
         }
 
         // GET: Products/Details/5

@@ -8,6 +8,23 @@
 
     <h1>Controle de Funcionários</h1>
 
+    @using (Html.BeginForm("Search", "Employees", FormMethod.Get))
+    {
+        <div class="row">
+
+            <div class="col-4">
+                <div class="input-group">
+                    <input class="form-control rounded" type="text" name="searchString" placeholder="Pesquisar" />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <button type="submit" value="Pesquisar" class="btn btn-search">Pesquisar</button>
+                <a href="@Url.Action("Index", "Employees")" class="btn btn-backDelete">Limpar Filtro</a>
+            </div>
+        </div>
+    }
+
     <div class="row p-3">
         <div class="row border-bottom border-dark align-items-end" style="font-weight: bold; padding-bottom: 5px   ">
 

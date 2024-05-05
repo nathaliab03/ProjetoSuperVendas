@@ -9,7 +9,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #259198;
 }
 
 html {
@@ -43,6 +43,11 @@ body {
 
     .text-navSuperVendas:hover {
         color: white !important;
+    }
+
+    .text-navSuperVendas.active {
+        color: #74bfff !important;
+        border-bottom: 4px solid #74bfff
     }
 
 .dropdown-item:hover {
@@ -158,12 +163,12 @@ tbody, td, tfoot, th, thead, tr {
 .btn-backDelete {
     background-color: #e38349;
     border-color: #9f6e47;
-    color: #ffefe3;
+    color: #ffe3e3;
 }
 
     .btn-backDelete:hover {
-        background-color: #d3662a;
-        border-color: #833636;
+        background-color: #d37e2a;
+        border-color: #9f6e47;
         color: #ffe3e3;
     }
 
@@ -175,6 +180,29 @@ tbody, td, tfoot, th, thead, tr {
         vertical-align: bottom
     }
 
+.btn-search {
+    background-color: #a181f4;
+    border-color: #5e479f;
+    color: #ffefe3;
+}
+
+    .btn-search:hover {
+        background-color: #6e2ad3;
+        border-color: #5e479f;
+        color: #ffe3e3;
+    }
+
+    .btn-search::before {
+        content: "\F52A";
+        font-family: "bootstrap-icons";
+        font-size: 15px;
+        margin-right: 4px;
+        vertical-align: bottom
+    }
+
 .detailAccess {
     text-align: center
 }
+
+
+

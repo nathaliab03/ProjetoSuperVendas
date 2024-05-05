@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-superVendas border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow p-3">
             <div class="container-fluid">
                 <a class="navbar-brand text-navSuperVendas" asp-area="" asp-controller="Home" asp-action="Index">SuperVendas</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -19,36 +19,46 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-navSuperVendas text-uppercase" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-navSuperVendas dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Navegar
-                            </a>
-                            <ul class="dropdown-menu bg-superVendas">
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Clients" asp-action="Index">Cliente</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Employees" asp-action="Index">Funcionário</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Orders" asp-action="Index">Pedido</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Products" asp-action="Index">Produtos</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Categories" asp-action="Index">Categorias</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="Logins" asp-action="Index">Logins</a></li>
-                                <li><a class="dropdown-item text-navSuperVendas" asp-area="" asp-controller="AccessLevels" asp-action="Index">Acessos</a></li>
-                            </ul>
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house"> </i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-navSuperVendas text-uppercase" asp-area="" asp-controller="SalesReports" asp-action="Index">Relatórios</a>
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Clients" ? "active" : "")" asp-area="" asp-controller="Clients" asp-action="Index"><i class="bi bi-person-heart"> </i> Cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Employees" ? "active" : "")" asp-area="" asp-controller="Employees" asp-action="Index"><i class="bi bi-person-vcard-fill"> </i> Funcionário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Products" ? "active" : "")" asp-area="" asp-controller="Products" asp-action="Index"><i class="bi bi-box-seam-fill"> </i> Produtos</a></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Categories" ? "active" : "")" asp-area="" asp-controller="Categories" asp-action="Index"><i class="bi bi-ui-checks"> </i> Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Logins" ? "active" : "")" asp-area="" asp-controller="Logins" asp-action="Index"><i class="bi bi-box-arrow-in-left"> </i> Logins</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "AccessLevels" ? "active" : "")" asp-area="" asp-controller="AccessLevels" asp-action="Index"><i class="bi bi-key"> </i> Acessos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "Orders" ? "active" : "")" asp-area="" asp-controller="Orders" asp-action="Index"><i class="bi bi-receipt"> </i> Pedido</a></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-navSuperVendas text-uppercase @(ViewContext.RouteData.Values["Controller"].ToString() == "SalesReports" ? "active" : "")" asp-area="" asp-controller="SalesReports" asp-action="Index"><i class="bi bi-graph-up-arrow"> </i> Relatórios</a>
                         </li>
                     </ul>
+                    <span class="nav-item">
+                        <a class="nav-link text-navSuperVendas text-uppercase" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-box-arrow-right"></i> Sair</a></a>
+                    </span>
                 </div>
             </div>
         </nav>
     </header>
 
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
 
     <footer class="border-top footer text-muted">

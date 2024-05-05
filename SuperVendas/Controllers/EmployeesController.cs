@@ -19,6 +19,19 @@ namespace SuperVendas.Controllers
             _context = context;
         }
 
+        public ActionResult Search(string searchString)
+        {
+
+            var items = from i in _context.Employee select i;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.ClientName.Contains(searchString));
+            }
+
+            return View("Index", items.ToList());
+        }
+
         // GET: Employees
         public async Task<IActionResult> Index()
         {

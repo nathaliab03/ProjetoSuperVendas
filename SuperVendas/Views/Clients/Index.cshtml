@@ -8,6 +8,24 @@
 
     <h1>Controle de Clientes</h1>
 
+    @using (Html.BeginForm("Search", "Clients", FormMethod.Get))
+    {
+        <div class="row">
+
+            <div class="col-4">
+                <div class="input-group">
+                    <input class="form-control rounded" type="text" name="searchString" placeholder="Pesquisar" />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <button type="submit" value="Pesquisar" class="btn btn-search">Pesquisar</button>
+                <a href="@Url.Action("Index", "Clients")" class="btn btn-backDelete">Limpar Filtro</a>
+            </div>
+        </div>
+    }
+
+
     <table class="table table-hover customTable">
         <thead>
             <tr class="row align-items-end ">

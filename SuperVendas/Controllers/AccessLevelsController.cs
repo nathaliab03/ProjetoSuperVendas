@@ -19,6 +19,19 @@ namespace SuperVendas.Controllers
             _context = context;
         }
 
+        public ActionResult Search(string searchString)
+        {
+
+            var items = from i in _context.AccessLevel select i;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.AccessLevelName.Contains(searchString));
+            }
+
+            return View("Index", items.ToList());
+        }
+
         // GET: AccessLevels
         public async Task<IActionResult> Index()
         {

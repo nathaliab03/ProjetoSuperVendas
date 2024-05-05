@@ -3,64 +3,91 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-
 <div class="container  py-4 viewIndex">
 
     <h1>Controle de Produtos</h1>
 
+    @using (Html.BeginForm("Search", "Products", FormMethod.Get))
+    {
+        <div class="row">
+
+            <div class="col-4">
+            <div class="input-group">
+                <input class="form-control rounded" type="text" name="searchString" placeholder="Pesquisar" />
+            </div>
+            </div>
+
+            <div class="col-3">
+                <select class="form-select" aria-label="Default select example" name="priceRange">
+                    <option value="" checked>Filtrar por preço</option>
+                    <option value="0-100.99">Até R$ 100,00</option>
+                    <option value="100-300">R$ 100,00 - R$ 300,00</option>
+                    <option value="300-500">R$ 300,00 - R$ 500,00</option>
+                    <option value="500">Acima de R$ 500,00</option>
+                </select>
+            </div>
+
+            <div class="col-4">
+                <button type="submit" value="Pesquisar" class="btn btn-search">Pesquisar</button>
+                <a href="@Url.Action("Index", "Products")" class="btn btn-backDelete">Limpar Filtro</a>
+            </div>
+        </div>
+    }
+
     <table class="table table-hover customTable">
         <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductBrand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductModel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductBrand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductModel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </th>
+
                 <th class="text-center"><a asp-action="Create" class="ms-4 px-5 btn btn-superVendas">Cadastrar</a></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductBrand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductModel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductBrand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductModel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
                     <td class="text-center">
                         <a asp-action="Edit" class="btn btn-edit" asp-route-id="@item.ProductId">Editar</a>
                         <a asp-action="Details" class="btn btn-details" asp-route-id="@item.ProductId">Info</a>
                         <a asp-action="Delete" class="btn btn-delete" asp-route-id="@item.ProductId">Deletar</a>
                     </td>
-        </tr>
-}
-    </tbody>
-</table>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

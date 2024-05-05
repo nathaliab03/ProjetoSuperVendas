@@ -19,6 +19,20 @@ namespace SuperVendas.Controllers
             _context = context;
         }
 
+        public ActionResult Search(string searchString)
+        {
+
+            var items = from i in _context.Login select i;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.Username.Contains(searchString));
+            }
+
+            items = items.Include(i => i.AccessLevel);
+            return View("Index", items.ToList());
+        }
+
         // GET: Logins
         public async Task<IActionResult> Index()
         {

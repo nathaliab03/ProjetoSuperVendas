@@ -5,6 +5,7 @@ namespace SuperVendas.Models
 {
     public class Order
     {
+        [Display(Name = "ID")]
         public int OrderId { get; set; }
 
         [Display(Name = "Data de Cadastro")]

@@ -8,6 +8,23 @@
 
     <h1>Controle de Login</h1>
 
+    @using (Html.BeginForm("Search", "Logins", FormMethod.Get))
+    {
+        <div class="row">
+
+            <div class="col-4">
+                <div class="input-group">
+                    <input class="form-control rounded" type="text" name="searchString" placeholder="Pesquisar" />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <button type="submit" value="Pesquisar" class="btn btn-search">Pesquisar</button>
+                <a href="@Url.Action("Index", "Logins")" class="btn btn-backDelete">Limpar Filtro</a>
+            </div>
+        </div>
+    }
+
     <table class="table table-hover customTable">
         <thead>
             <tr>

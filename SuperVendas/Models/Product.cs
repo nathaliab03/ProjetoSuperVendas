@@ -11,8 +11,8 @@ namespace SuperVendas.Models
         [Required]
         public string? ProductName { get; set; }
 
-        public int CategoryId { get; set; }
         [Display(Name = "Categoria")]
+        public int CategoryId { get; set; }
         public Category? Category { get; set; }
 
         [Display(Name = "Marca")]
@@ -29,5 +29,7 @@ namespace SuperVendas.Models
 
         [Display(Name = "Quantidade em Estoque")]
         public int Stock { get; set; }
+
+
     }
 }

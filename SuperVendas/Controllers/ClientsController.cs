@@ -25,6 +25,19 @@ namespace SuperVendas.Controllers
             return View(await _context.Client.ToListAsync());
         }
 
+        public ActionResult Search(string searchString)
+        {
+
+            var items = from i in _context.Client select i;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.ClientName.Contains(searchString));
+            }
+
+            return View("Index", items.ToList());
+        }
+
         // GET: Clients/Details/5
         public async Task<IActionResult> Details(int? id)
         {
