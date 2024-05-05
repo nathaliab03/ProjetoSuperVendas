@@ -7,6 +7,10 @@ namespace SuperVendas.Models
     {
         public int OrderId { get; set; }
 
+        [Display(Name = "Data de Cadastro")]
+        [Required]
+        public DateTime EntryDate { get; set; }
+
         public int ClientId { get; set; }
 
         [Display(Name = "Cliente")]

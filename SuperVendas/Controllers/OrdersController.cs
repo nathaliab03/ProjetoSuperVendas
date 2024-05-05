@@ -61,7 +61,7 @@ namespace SuperVendas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,ClientId,EmployeeId,ProductId,Quantity,Price,PaymentMethod")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,EntryDate,ClientId,EmployeeId,ProductId,Quantity,Price,PaymentMethod")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace SuperVendas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderId,ClientId,EmployeeId,ProductId,Quantity,Price,PaymentMethod")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,EntryDate,ClientId,EmployeeId,ProductId,Quantity,Price,PaymentMethod")] Order order)
         {
             if (id != order.OrderId)
             {

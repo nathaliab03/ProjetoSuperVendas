@@ -10,6 +10,16 @@
     <table class="table col-2 table-hover">
         <tr>
             <th scope="col" class="text-end col-6">
+                @Html.DisplayNameFor(model => model.EntryDate)
+            </th>
+
+            <td scope="col" class="text-start">
+                @Html.DisplayFor(model => model.EntryDate)
+            </td>
+
+        </tr>
+        <tr>
+            <th scope="col" class="text-end col-6">
                 @Html.DisplayNameFor(model => model.Client)
             </th>
 
